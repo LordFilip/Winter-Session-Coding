@@ -1,122 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Montenegro virtual tour</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+			<!DOCTYPE html>
+			<html>
+			<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<title>Drugi domaci</title>
 
-	<h1>Montenegro virtual tour</h1>
+				<!-- Bootstrap -->
+				<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+				<!-- CSS -->
+				<link rel="stylesheet" type="text/css" href="style.css">
+			</head>
+			<body>
 
-	<table>
+				<button type="button" class="btn btn-primary position-absolute end-0 top-0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Dodaj Novi Film</button>
 
-		<thead id="main-row">
-			<th>Redni broj</th>
-			<th>Naziv grada</th>
-			<th>Regija</th>
-			<th>Broj stanovnika</th>
-			<th>Znamenitosti</th>
-			<th>Fotografija</th>
-		</thead>
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Dodaj Film</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			        <form id="form">
+			          <div class="mb-3">
+			            <label for="name" class="col-form-label">Naziv:</label>
+			            <input type="text" class="form-control" id="name" required>
+			          </div>
+			          <div class="mb-3">
+			            <label for="year" class="col-form-label">Godina:</label>
+			            <input type="number" min="1931" max="2021" class="form-control" id="year" required>
+			          </div>
+			          <div class="mb-3">
+			            <label for="country" class="col-form-label">Drzava:</label>
+			            <input type="text" class="form-control" id="country">
+			          </div>
+			          <div class="mb-3">
+			            <label for="actors" class="col-form-label">Glumci:</label>
+			            <input type="text" class="form-control" id="actors" required>
+			          </div>
+			          <div class="mb-3">
+			            <label for="note" class="col-form-label">Napomena:</label>
+			            <textarea class="form-control" id="note"></textarea>
+			          </div>
+			          <div class="modal-footer">
+			        	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+			        	<button type="submit" id="submit-button" class="btn btn-primary">Dodaj</button>
+			      	  </div>
+			        </form>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
-		<tbody>
+			<table>
+				<thead>
+					<th>Odgledan</th>
+					<th>Naziv</th>
+					<th>Godina</th>
+					<th>Država</th>
+					<th>Napomena</th>
+					<th>Glumci</th>
+				</thead>
+				<tbody id="table-body">
+				</tbody>
+			</table>
 
-			<tr>
-				<td>1.</td>
-				<td> <a href="https://www.google.com/search?q=bar&oq=bar&aqs=chrome.0.0i355i512j46i512j0i512l3j46i512j0i512j69i60.4656j0j9&sourceid=chrome&ie=UTF-8">Bar</a></td>
-				<td>Južna</td>
-				<td>42,068</td>
-				<td>
-					<ol>
-						<li>Stari grad Bar</li>
-						<li>Saborni hram Svetog Jovana Vladimira</li>
-						<li>Stara maslina</li>
-					</ol>
-				</td>
-				<td><img src="images/bar.jpg"></td>
-			</tr>
+			<!-- Bootstrap JS -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+			
 
-			<tr>
-				<td>2.</td>
-				<td><a href="https://www.google.com/search?q=cetinje&oq=cetinje&aqs=chrome.0.0i355i512j46i512j0i512l6j46i175i199i512j0i512.1344j0j9&sourceid=chrome&ie=UTF-8">Cetinje</a> </td>
-				<td>Centralna</td>
-				<td>16,657</td>
-				<td>
-					<ol>
-						<li>Cetinjski Manastir</li>
-						<li>Biljarda</li>
-						<li>Narodni muzej Crne Gore</li>
-					</ol>
-				</td>
-				<td><img src="images/cetinje.jpg"></td>
-			</tr>
+			<script src="script.js" charset="utf-8"></script>
 
-			<tr>
-				<td>3.</td>
-				<td><a href="https://www.google.com/search?gs_ssp=eJzj4tTP1TewrCgqsDRg9OJOSczLzMkvSy9KTAEAWuAH7A&q=danilovgrad&oq=danilovgr&aqs=chrome.1.35i39j46i512j69i59l2j69i57j46i512j69i60l2.3055j1j9&sourceid=chrome&ie=UTF-8"> Danilovgrad</a></td>
-				<td>Centralna</td>
-				<td>18,472</td>
-				<td>
-					<ol>
-						<li>Manastir Ostrog</li>
-						<li>Manastir Ždrebaonik</li>
-						<li>Dvorac Kralja Nikole</li>
-					</ol>
-				</td>
-				<td><img src="images/danilovgrad.jpg"></td>
-			</tr>
-
-
-			<tr>
-				<td>4.</td>
-				<td><a href="https://www.google.com/search?q=kotor&oq=kotor&aqs=chrome.0.0i271j46i512j69i59l2j0i56j0i512j69i60l2.704j1j9&sourceid=chrome&ie=UTF-8"> Kotor </a></td>
-				<td>Južna</td>
-				<td>22,601</td>
-				<td>
-					<ol>
-						<li>Stari grad Kotor</li>
-						<li>Gospa od Škrpjela</li>
-						<li>Perast</li>
-					</ol>
-				</td>
-				<td><img src="images/kotor.jpg"></td>
-			</tr>
-
-			<tr>
-				<td>5.</td>
-				<td><a href="https://www.google.com/search?q=podgorica&oq=podgor&aqs=chrome.0.35i39j46i512j69i59l3j69i57j69i60l2.1232j0j9&sourceid=chrome&ie=UTF-8"> Podgorica</a></td>
-				<td>Centralna</td>
-				<td>185 915</td>
-				<td>
-					<ol>
-						<li>Saborni hram Hristovog Vaskrsenja</li>
-						<li>Dvorac Petrovića</li>
-						<li>Sahat Kula</li>
-					</ol>
-				</td>
-				<td><img src="images/podgorica.jpg"></td>
-			</tr>
-
-			<tr>
-				<td>6.</td>
-				<td><a href="https://www.google.com/search?gs_ssp=eJzj4tTP1TdIsjS3MDNg9GKvSkzKyUrMBgA2VgWw&q=zabljak&oq=yabljak&aqs=chrome.1.69i57j46i10i512j0i10i512l4j46i10i175i199i512j0i10i512l2.2372j0j9&sourceid=chrome&ie=UTF-8"> Žabljak</a></td>
-				<td>Sjeverna</td>
-				<td>3,569</td>
-				<td>
-					<ol>
-						<li>Crno jezero</li>
-						<li>Vražje jezero</li>
-						<li>Most na Đurđevića Tari</li>
-					</ol>
-				</td>
-				<td><img src="images/zabljak.jpg"></td>
-			</tr>
-	
-		</tbody>
-
-	</table>
-
-</body>
-</html>
+			</body>
+			</html>
